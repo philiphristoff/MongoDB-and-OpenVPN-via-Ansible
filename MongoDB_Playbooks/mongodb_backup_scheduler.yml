@@ -1,0 +1,10 @@
+- name: Schedule MongoDB Backup
+  hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: Schedule MongoDB Backup every 12 hours
+      cron:
+        name: "Run MongoDB Backup"
+        minute: "0"
+        hour: "*/12"
+        job: "ansible-playbook /home/azureuser/Ansible_Playbooks/mongodb_backup.yml"

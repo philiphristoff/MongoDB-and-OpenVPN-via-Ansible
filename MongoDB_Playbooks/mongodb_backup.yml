@@ -1,0 +1,24 @@
+- name: mongodb backup
+  hosts: ubuntu2
+  become: true
+  tasks:
+          - name: install mongodb tools
+            apt:
+                    name: mongodb-clients
+                    state: present
+
+          - name: create backup directory
+            file:
+                    path: ~/mongodb_backup
+                    state: directory
+
+          - name: perform mongodb backup
+            command: mongodump --host 10.0.0.4 --port 27017 -u remoteUser -p remotePassword --authenticationDatabase admin --out ~/mongodb_backup
+
+          - name: archive backup
+            command: tar -czvf ~/mongodb_backup/archive.tar.gz -C ~/mongodb_backup .
+
+          - name: cleanup temporary backup directory
+            file:
+                    path: ~/mongodb_backup
+                    state: absent
