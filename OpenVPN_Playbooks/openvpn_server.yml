@@ -1,0 +1,25 @@
+- name: install and config OpenVPN server side
+  hosts: localhost
+  become: true
+
+  tasks:
+          - name: apt update
+            apt:
+                    update_cache: yes
+
+          - name: install OpenVPN
+            apt:
+                    name: openvpn
+                    state: present
+
+          - name: copy server.conf file
+            copy:
+                    src: /home/azureuser/Ansible_Playbooks/OpenVPN/server.conf
+                    dest: /etc/openvpn/server.conf
+            notify: restart openvpn
+
+  handlers:
+          - name: restart openvpn
+            service:
+                    name: openvpn
+                    state: restarted
