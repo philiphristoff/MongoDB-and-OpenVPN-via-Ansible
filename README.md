@@ -33,3 +33,9 @@ The requirements are as follows:
  
    Two playbooks were used for this step, MongoDB_Playbooks/mongodb_backup.yml and mongodb_backup_scheduler.yml. They could have been fit into one single playbook but this logical separation allows
    for our playbooks to be more flexible and have a higher factor of reusability.
+   The scheduler playbook is simply used to launch the main backup playbook every 12 hours with the help of cron jobs. Moving on to the main backup playbook, the steps it performs are as follows:
+   - Installing MongoDB tools.
+   - Creating backup directory on Ubuntu2 where the backups are to be temporarily stored.
+   - Retrieving the backup from Ubuntu1 using the mongodump command. (This is where the remoteUser that was created earlier comes into play)
+   - Archiving the backup.
+   - Cleaning up the temporary backup directory.
