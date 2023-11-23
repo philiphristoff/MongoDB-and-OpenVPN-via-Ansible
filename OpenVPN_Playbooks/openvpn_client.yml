@@ -14,7 +14,7 @@
 
     - name: copy client.conf file
       copy:
-        src: /path/to/your/client.conf  # Replace with the path to your client configuration file
+        src: tba
         dest: /etc/openvpn/client.conf
       notify: restart openvpn
 
