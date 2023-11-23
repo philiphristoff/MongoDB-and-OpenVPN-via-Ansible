@@ -39,3 +39,12 @@ The requirements are as follows:
    - Retrieving the backup from Ubuntu1 using the mongodump command. (This is where the remoteUser that was created earlier comes into play)
    - Archiving the backup.
    - Cleaning up the temporary backup directory.
+
+## 4. Setting up OpenVPN server side on Ubuntu1:
+
+   Moving on to the third task from the list, setting up an OpenVPN server-client connection between Ubuntu1 and Ubuntu2. Two playbooks are used for these purposes OpenVPN_Playbooks/openvpn_client.yml and openvpn_server.yml.
+   For the server side of the setup, the openvpn_server.yml playbook is used. The steps the playbook goes through are as follows:
+   - Updating the APT cache.
+   - Installing OpenVPN
+   - Copying the server.conf file to the required location (/etc/openvpn)
+   - Restarting OpenVPN
