@@ -1,0 +1,25 @@
+- name: Install and configure OpenVPN client
+  hosts: localhost
+  become: true
+
+  tasks:
+    - name: apt update
+      apt:
+        update_cache: yes
+
+    - name: install OpenVPN
+      apt:
+        name: openvpn
+        state: present
+
+    - name: copy client.conf file
+      copy:
+        src: /path/to/your/client.conf  # Replace with the path to your client configuration file
+        dest: /etc/openvpn/client.conf
+      notify: restart openvpn
+
+  handlers:
+    - name: restart openvpn
+      service:
+        name: openvpn
+        state: restarted
