@@ -5,6 +5,7 @@ This repo will contain my solutions to a series of practical tasks, using the po
 - Set up a VPN server (with Ansible) in one VM and connect to it from the other.
 
 # Solution and Workflow:
+Link to Prezi: https://prezi.com/view/JwuNy0OPlPR0eUvwHkz1/
 ## 1. Configuring the two needed VMs in Microsoft Azure:
 
    The first needed step was configuring the two Ubuntu VMs in Azure. The VMs were both setup up with headless Ubuntu 20.04s, 1GB of RAM, and dynamic hard drives.
