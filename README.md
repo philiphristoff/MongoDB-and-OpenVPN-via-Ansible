@@ -56,5 +56,3 @@ Link to Prezi: https://prezi.com/view/JwuNy0OPlPR0eUvwHkz1/
    - Installing OpenVPN
    - Copying the client.conf file to the required location (/etc/openvpn)
    - Restarting OpenVPN
-
-It's important to mention that both step 4. and step 5. use predefined server and client configuration files. A good idea for a farther advancement of this project would be to automate the creation of these files as well.
