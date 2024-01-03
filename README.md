@@ -46,7 +46,7 @@ Link to Prezi: https://prezi.com/view/JwuNy0OPlPR0eUvwHkz1/
    For the server side of the setup, the openvpn_server.yml playbook is used. The steps the playbook goes through are as follows:
    - Updating the APT cache.
    - Installing OpenVPN
-   - Copying the server.conf file to the required location (/etc/openvpn)
+   - Copying the server.conf file to the required location(/etc/openvpn)
    - Restarting OpenVPN
 
 ## 5. Setting up OpenVPN client side on Ubuntu2:
